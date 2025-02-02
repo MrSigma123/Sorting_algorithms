@@ -30,7 +30,7 @@ int main(void)
 void selection_sort(int * source_arr, int * dest_arr, int size)
 {
   // sort the results (implement own sorting algorithm)
-  int i, j;
+  int i, j, x;
   int minimum = INT_MAX;
   int traced_element;
   int minimum_index;
@@ -41,18 +41,19 @@ void selection_sort(int * source_arr, int * dest_arr, int size)
   for (i = 0; i < size; i++)
   {
     minimum = INT_MAX;
+    minimum_index = i;
     for (j = i; j < size; j++)
     {
-      if(source_arr[j] < minimum)
+      if(dest_arr[j] < minimum)
       {
-        minimum = source_arr[j];
+        minimum = dest_arr[j];
         minimum_index = j;
       }
     }
     // swap the minimum and traced element
-    traced_element = source_arr[i];
+    traced_element = dest_arr[i];
     dest_arr[i] = minimum;
-    dest_arr[j] = traced_element;
+    dest_arr[minimum_index] = traced_element;
   }
 }
 
