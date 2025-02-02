@@ -3,6 +3,7 @@
 #include <limits.h>
 #define SIZE 10
 void selection_sort(int * source_arr, int * dest_arr, int size);
+void copy_array(int * array1, int * array2, int size);
 
 int main(void)
 {
@@ -17,7 +18,7 @@ int main(void)
   {
     printf("%d, ", test_array[i]);
   }
-  printf("SORTED ARRAY:\n");
+  printf("\nSORTED ARRAY:\n");
   for (i = 0; i < SIZE; i++)
   {
     printf("%d, ", sorted_array[i]);
@@ -33,6 +34,9 @@ void selection_sort(int * source_arr, int * dest_arr, int size)
   int minimum = INT_MAX;
   int traced_element;
   int minimum_index;
+
+  // copy the source array into destination array
+
   for (i = 0; i < size; i++)
   {
     minimum = INT_MAX;
@@ -49,4 +53,12 @@ void selection_sort(int * source_arr, int * dest_arr, int size)
     dest_arr[i] = minimum;
     dest_arr[j] = traced_element;
   }
+}
+
+void copy_array(int * array1, int * array2, int size) {
+    for (int i = 0; i < size; i++) {
+
+        // Copy each element one by one
+        array2[i] = array1[i];
+    }
 }
