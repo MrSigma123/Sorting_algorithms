@@ -9,7 +9,7 @@ int main(void)
   int n;
   int i;
   printf("Enter the size of array: ");
-  scanf("%d", &size);
+  scanf("%d", &n);
   int * source = (int*)malloc(sizeof(int) * n);
   int * dest = (int*)malloc(sizeof(int) * n);
 
