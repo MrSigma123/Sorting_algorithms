@@ -40,7 +40,7 @@ int main(void)
     printf("%d,", dest[i]);
     if (i == n - 1)
     {
-      printf("%d", source[i]);
+      printf("%d", dest[i]);
     }
   }
 
